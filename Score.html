@@ -3,49 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <title>학점 시스템</title>
-
 </head>
+
 <body>
     <h3>학점 시스템</h3>
     <hr>
 <form class="myForm">
     <label>
-        이름 : <input type="text" value="이성준" id="name">
+        이름 : <input type="text" value="" class="info">
     </label>
     <label>
-        학번 : <input type="text" value="20132013" id="number">
+        학번 : <input type="text" value="20132013" class="info">
     </label>
     <br><br>
     <label>
-        국어 : <input type="number" value="100" id="score1">
+        국어 : <input type="number" value="100" class="info">
     </label>
     <br>
     <label>
-        영어 : <input type="number" value="95" id="score2">
+        영어 : <input type="number" value="95" class="info">
     </label>
     <br>
     <label>
-        수학 : <input type="number" value="90" id="score3">
+        수학 : <input type="number" value="90" class="info">
     </label>
     <br>
     <label>
-        과학 : <input type="number" value="85" id="score4">
+        과학 : <input type="number" value="85" class="info">
     </label>
-    <button onclick=submit()>전송</button>
-    <br><br>
 </form>
-<table id="myTable">
+<button onclick="submit()">전송</button>
+<table border="1" id="myTable">
 
 </table>
+
+</body>
 <script>
         function submit(){
-            console.log("pass");
             let tableID = document.getElementById("myTable");
-            let formID = document.querySelectorAll(".myForm");
-            console.log(formID.constructor.name);
-            let input = "<tr>"
-            console.log(input);
-        }
+            let formID = document.querySelectorAll(".info");
+            let input = "<tr>" + "<th>" + "학번" + "</th>" + "<th>" + "국어" + "</th>" +  "<th>" + "영어" + "</th>" + "<th>" + "수학" + "</th>" + "<th>" + "과학" + "</th>" + "<th>" + "평균" + "</th>" + "</tr>";
+            let Score = 0;
+            input += "<tr>";
+            for(i=1; i<6; i++){
+                input += "<td>";
+                input += formID[i].value;
+                input += "</td>";
+                if(i<5){
+                    Score += parseFloat(formID[i+1].value); //2,3,4,5
+                }
+                console.log(Score);
+            }
+            Score = parseFloat(Score) / 4;
+            input += "<td>"+ Score + "</td>" + "</tr>";
+            tableID.innerHTML = input;
+            }
 </script>
-</body>
+
 </html>
