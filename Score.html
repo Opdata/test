@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>학점 시스템</title>
+
+</head>
+<body>
+    <h3>학점 시스템</h3>
+    <hr>
+<form class="myForm">
+    <label>
+        이름 : <input type="text" value="이성준" id="name">
+    </label>
+    <label>
+        학번 : <input type="text" value="20132013" id="number">
+    </label>
+    <br><br>
+    <label>
+        국어 : <input type="number" value="100" id="score1">
+    </label>
+    <br>
+    <label>
+        영어 : <input type="number" value="95" id="score2">
+    </label>
+    <br>
+    <label>
+        수학 : <input type="number" value="90" id="score3">
+    </label>
+    <br>
+    <label>
+        과학 : <input type="number" value="85" id="score4">
+    </label>
+    <button onclick=submit()>전송</button>
+    <br><br>
+</form>
+<table id="myTable">
+
+</table>
+<script>
+        function submit(){
+            console.log("pass");
+            let tableID = document.getElementById("myTable");
+            let formID = document.querySelectorAll(".myForm");
+            console.log(formID.constructor.name);
+            let input = "<tr>"
+            console.log(input);
+        }
+</script>
+</body>
+</html>

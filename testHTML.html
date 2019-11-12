@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 만들기</title>
+<script>
+function Test() { // 심리테스트
+	let Form = document.createElement("FORM");
+	let Label = document.createElement("LABEL");
+	let Input = document.createElement("INPUT");
+	let Question = document.getElementById("question");
+	Form.setAttribute("id","myForm");
+	document.body.appendChild(Form);
+	document.body.appendChild(Label);
+	Label.setAttribute("id","LabelID");
+	let LabelID = document.getElementById("LabelID");
+	document.body.appendChild(Input);
+	Question.innerHTML = "가을을 맞이하여 책장 정리을 하였는데 책상 위에 필름이 하나 있습니다 그래서 필름을 뽑아 보았습니다. 거기서 어떤 사진이 나올 것인가?<br>";
+	//Input 1
+	let idiv = document.createElement("div");
+	let input = "<table>";
+	for(let i = 0; i< 4; i++){
+		input +=
+		Input.setAttribute("type","radio");
+		Input.setAttribute("name","number1");
+		Input.setAttribute("value","1");
+	}
+	input += "</table><br>";
+	idiv.innerHTML = input;
+
+}
+</script>
+</head>
+<body>
+<h3>심리 테스트</h3>
+<hr>
+<p id="question"></p>
+<script>
+	Test();
+</script>
+</body>
+</html>
